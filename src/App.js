@@ -1,15 +1,20 @@
 
 import { useState } from 'react';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import About from './components/About'
+import RegisterPage from './pages/Register';
+import LoginPage from './pages/Login';
 import Navbar from './components/Navbar';
  import TextForm from './components/TextForm';
-//  import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
+  import {
+   BrowserRouter as Router,
+   Routes,
+   Route,
   
-// } from "react-router-dom";
+ } from "react-router-dom";
 
+ // build using function based components
  
 
 function App() {
@@ -24,19 +29,20 @@ function App() {
     }
   }
   return (
-    <>
-  {/* //  <Router> */}
+    
+    <Router>
    <Navbar  title = "TextUtils" mode={mode}   toggleMode = {toggleMode}/>
    <div className='container' my-3='true'>
-   <TextForm heading = "Enter the Text to analyze below" mode = {mode} />
-    {/* <Routes>   
+   {/* <TextForm heading = "Enter the Text to analyze below" mode = {mode} /> */}
+    <Routes>   
           <Route exact path="/about" element={<About />} />
           <Route exact path="/" element={<TextForm heading="Enter the text to analyze below" mode = {mode} />} />
-          
-  </Routes>*/}
+          <Route path="/register" element = {<RegisterPage/>} />
+          <Route path="/login" element = {<LoginPage/>} />          
+  </Routes>
    </div> 
-  {/* //  </Router> */}
-  </>
+   </Router>
+  
   );
 }
 

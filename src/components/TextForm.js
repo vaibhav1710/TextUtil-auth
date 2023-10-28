@@ -6,6 +6,9 @@ export default function TextForm(props) {
         let newText = text.toUpperCase();
         setText(newText);
     }
+    const Clear = () => {
+        setText("");
+    }
     const handleLCase = () => {
         let newText = text.toLowerCase();
         setText(newText);
@@ -32,6 +35,7 @@ export default function TextForm(props) {
 <button className="btn-btn-primary mx-2" onClick={handleUCase}>Convert to UpperCase</button>
 <button className="btn-btn-primary mx-2" onClick={handleLCase}>Convert to LowerCase</button>
 <button className="btn-btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
+<button className= "btn-btn-primary mx-2" onClick={Clear}>Clear Text</button>
     </div>
     <div className='container my-3' style = {{color:props.mode==='light'?'black':'white'}}>
         <h2>Your text Summary</h2>
